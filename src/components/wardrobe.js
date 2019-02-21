@@ -15,7 +15,12 @@ export default class Wardrobe extends Component {
           this.props.garments.map(garment => {
             return (
               <li key={garment.id}>
-                <span>Name: {garment.name}</span>
+                <p>Name: {garment.name}</p>
+                <img 
+                  src={garment.imageUrl}
+                  style={{height: '75px', width: '75px'}}
+                  alt={garment.description}
+                />
               </li>
             )
           })
