@@ -22,7 +22,7 @@ app.use((err,req,res,next) => {
   res.status(err.status || 500).send(err.message || 'Internal server error')
 })
 
-db.sync({force: true})
+db.sync()
   .then(() => console.log('DB Synced!'))
   .then(app.listen(PORT, () => console.log(`GarbGuess listening on port ${PORT}!`)))
   .catch(() => console.log('*** Something went wrong! ***'))

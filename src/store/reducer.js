@@ -15,7 +15,7 @@ export const setGarments = (garments) => {
 export default function(state = initialState, action) {
   switch(action.type) {
     case GOT_GARMENTS:
-      return action.garments
+      return {garments: action.garments}
     default: return state
   }
 }

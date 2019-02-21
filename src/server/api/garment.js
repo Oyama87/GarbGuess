@@ -13,4 +13,35 @@ router.get('/', async (req,res,next) => {
   }
 })
 
+router.post('/', async (req,res,next) => {
+  const {
+    name,
+    description,
+    region,
+    color,
+    warmth,
+    formality,
+    resistance,
+    imageUrl
+  } = req.body
+  
+  try {
+    const newGarment = await Garment.create({
+      name,
+      description,
+      region,
+      color,
+      warmth,
+      formality,
+      resistance,
+      imageUrl
+    })
+    res.json(newGarment)
+  }
+  catch(err) {
+    console.log(err)
+    next(err)
+  }
+})
+
 module.exports = router

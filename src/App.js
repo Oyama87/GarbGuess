@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Wardrobe from './components/wardrobe'
-import {setGarments} from './store/reducer'
+// import {setGarments} from './store/reducer'
 import './App.css';
+// import {connect} from 'react-redux'
 import Axios from 'axios';
+import AddItemForm from './components/AddItemForm'
 
 class App extends Component {
   constructor() {
@@ -15,7 +17,9 @@ class App extends Component {
   async componentDidMount() {
     try {
       const {data} = await Axios.get('http://localhost:8080/api/garments/')
-      setGarments(data)
+      this.setState({
+        garments: data
+      })
     }
     catch(err) {
       console.error(err)
@@ -31,8 +35,8 @@ class App extends Component {
        </header>
        
        <main>
-         <div className='main-container'>
-           <button className='primary-button'>Add item to wardrobe</button>
+         <div className='form-container'>
+           <AddItemForm />
          </div>
          
          <div className='wardrobe-container'>
@@ -44,4 +48,12 @@ class App extends Component {
   }
 }
 
-export default App;
+// const mapState = state => {
+//   return {
+//     garments: state.garments
+//   }
+// }
+
+export default App
+
+// export default connect(mapState, null)(App);
