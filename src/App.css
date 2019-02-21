@@ -1,3 +1,7 @@
 body {
   background-color: #efefef;
 }
+
+li {
+  list-style-type: none;
+}
