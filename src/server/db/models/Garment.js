@@ -2,8 +2,7 @@ const Sequelize = require('sequelize')
 
 module.exports = {
   name: {
-    type: Sequelize.STRING,
-    defaultValue: 'Unspecified Garment'
+    type: Sequelize.STRING
   },
   description: {
     type: Sequelize.TEXT
@@ -24,6 +23,9 @@ module.exports = {
     type: Sequelize.STRING
   },
   resistance: {
-    type: Sequelize.String
+    type: Sequelize.STRING
+  },
+  imageUrl: {
+    type: Sequelize.STRING
   }
 }
