@@ -3,6 +3,17 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      garments: []
+    }
+  }
+  
+  componentDidMount() {
+    
+  }
+  
   render() {
     return (
       <div className="App">
@@ -12,15 +23,7 @@ class App extends Component {
        
        <main>
          <div className='main-container'>
-           
-           <div>
-             
-           </div>
-           
-           <div>
-             
-           </div>
-           
+           <button className='primary-button'>View Wardrobe</button>
          </div>
        </main>
       </div>
