@@ -31,7 +31,7 @@ class App extends Component {
     return (
       <div className="App">
        <header>
-         <h1>Welcome to GarbGuess, your personal wardrobe assistant!</h1>
+         <h1 style={{textAlign: 'center'}}>Welcome to GarbGuess, your personal wardrobe assistant!</h1>
        </header>
        
        <main>

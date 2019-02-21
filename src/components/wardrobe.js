@@ -10,11 +10,18 @@ export default class Wardrobe extends Component {
   
   render() {
     return (
-      <ul>
+      <ul 
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-start',
+          alignItems: 'center',
+          flexWrap: 'wrap'
+        }}
+      >
         {
           this.props.garments.map(garment => {
             return (
-              <li key={garment.id}>
+              <li key={garment.id} style={{margin: '0px 10px'}}>
                 <p>Name: {garment.name}</p>
                 <img 
                   src={garment.imageUrl}
